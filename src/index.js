@@ -40,7 +40,9 @@ const server = new ApolloServer( {
         const user = await getUser(token);
 
         return { models, user };
-    }
+    },
+    introspection: true,
+    playground: true
 });
 server.applyMiddleware({ app, path: '/api' });
 
